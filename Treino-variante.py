@@ -14,23 +14,15 @@ vendas = [
 ]
 
 
-
 total = 0
-maior = 0
-for profundidade in range(3):
+for coluna in range(4):
    total_profundidade = 0
    for linha in range(2):
        total_linha = 0
-       for coluna in range(4):
+       for profundidade in range(3):
            total = total + vendas[profundidade][linha][coluna]
            total_linha = total_linha + vendas[profundidade][linha][coluna]
        print(f'Total da linha {linha}: {total_linha}')
        total_profundidade = total_profundidade + total_linha
-       if total_profundidade > maior:
-           maior = total_profundidade
-       print()
-   print(f'O combustivel com maior valor de vendas foi {maior}')
-   print()
-print()
+   print(f'Total da profundidade {profundidade}: {total_profundidade}')
 print(f'Total de vendas: {total}')
-
